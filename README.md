@@ -54,10 +54,8 @@ You can also use the CDK command to destroy the environment that was created.
 cdk destroy
 ```
 
-If you need help with any of these steps for working with EKS clusters for Kodexa come join us in [Kodexa Slack](https://slack.kodexa.com)\[3\]
+If you need help with any of these steps for working with EKS clusters for Kodexa come join us in [Kodexa Slack](https://slack.kodexa.com) \[3\]
 
 \[1\]:	https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html
-
 \[2\]:	https://www.anaconda.com/products/individual
-
 \[3\]:	https://slack.kodexa.com
