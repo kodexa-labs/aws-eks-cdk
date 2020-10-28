@@ -2,13 +2,13 @@
 
 A CDK deployment to create a VPC and EKS Cluster
 
-This project is useful if you are looking to get started with an instance of Kodexa from AWS Marketplace. It will create a VPC with an EKS cluster in place ready for the marketplace helm deployment.\`\`
+This project is useful if you are looking to get started with an instance of Kodexa from AWS Marketplace. It will create a VPC with an EKS cluster in place ready for the marketplace helm deployment.
 
 ## Getting Started
 
-First up install CDK on your machine, see [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) \[1\]. Note that during your AWS configure you will be using the access and secret keys we received from creating the user above.
+First up, install CDK on your machine, see [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) \[1\]. Note that during your AWS configure you will be using the access and secret keys we received from creating the user above.
 
-To use CDK we recommend that you install Anaconda ([https://www.anaconda.com/products/individual]) \[2\], you can then create the conda environment and use that to manage the dependencies. Make sure you have cloned this repository and go to that directory and run the following commands:
+To use CDK we recommend that you [install Anaconda](https://www.anaconda.com/products/individual]) \[2\]. You can then create the conda environment and use that to manage the dependencies. Make sure you have cloned this repository and go to that directory and run the following commands:
 
 ```bash
 conda env create -f environment.yml
@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 ```
 
-Now you have your environment in available.
+Now you have your environment available.
 
 ## Deploying the EKS cluster
 
@@ -29,11 +29,11 @@ You are welcome to change this in the app.py, and then you can run the deploy:
 cdk deploy
 ```
 
-This process might take some time to create the infrastructure, note it will first show you the changes that will be made before making them.
+This process might take some time to create the infrastructure. Note it will first show you the changes that will be made before making them.
 
 All CDK changes will be made through a CloudFormation template.
 
-At the end of the deploy the command will output an AWS CLI command that will register the cluster with your local kubectl.
+At the end of the deploy, the command will output an AWS CLI command that will register the cluster with your local kubectl.
 
 ```bash
 Outputs:
