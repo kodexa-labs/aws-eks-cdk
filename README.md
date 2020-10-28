@@ -14,7 +14,7 @@ First let’s create an IAM user that we will use to manage this process.
 
 In your AWS console goto the IAM section (https://console.aws.amazon.com/iam/home). Choose to add a new user.
 
-![][image-1]
+![Creating User][image-1]
 
 ## Getting Started
 
@@ -31,4 +31,4 @@ Once finished
 cdk destroy
 ```
 
-[image-1]:	images/iam1.png
+[image-1]:	./images/iam1.png
