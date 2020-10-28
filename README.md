@@ -6,9 +6,9 @@ This project is useful if you are looking to get started with an instance of Kod
 
 ## Getting Started
 
-First up install CDK on your machine, see <a href="https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html" target="_blank">Getting started with the AWS CDK</a> [1]. Note that during your AWS configure you will be using the access and secret keys we received from creating the user above.
+First up install CDK on your machine, see [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) \[1\]. Note that during your AWS configure you will be using the access and secret keys we received from creating the user above.
 
-To use CDK we recommend that you install Anaconda ([https://www.anaconda.com/products/individual][2]), you can then create the conda environment and use that to manage the dependencies.
+To use CDK we recommend that you install Anaconda ([https://www.anaconda.com/products/individual]) \[2\], you can then create the conda environment and use that to manage the dependencies. Make sure you have cloned this repository and go to that directory and run the following commands:
 
 ```bash
 conda env create -f environment.yml
