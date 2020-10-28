@@ -35,6 +35,17 @@ All CDK changes will be made through a CloudFormation template.
 
 At the end of the deploy the command will output an AWS CLI command that will register the cluster with your local kubectl.
 
+```bash
+Outputs:
+demo.Output = vpc-066b33daxxxxxxxx
+demo.kodexaeksclusterdemoConfigCommand8FA7EDC8 = aws eks update-kubeconfig --name kodexa-eks-cluster-demo --region us-east-1 --role-arn arn:aws:iam::045323014350:role/demo-kodexaeksadminroledemo56DDE46B-xxxxxxxx
+demo.kodexaeksclusterdemoGetTokenCommand26EC227C = aws eks get-token --cluster-name kodexa-eks-cluster-demo --region us-east-1 --role-arn arn:aws:iam::045323014350:role/demo-kodexaeksadminroledemo56DDE46B-xxxxxxxxx
+
+Stack ARN:
+arn:aws:cloudformation:us-east-1:045323014350:stack/demo/84305320-1936-11eb-xxxx-xxxxxxxxx
+
+```
+
 ## Destroying the EKS cluster
 
 You can also use the CDK command to destroy the environment that was created.
