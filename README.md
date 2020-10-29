@@ -23,7 +23,7 @@ Now you have your environment available.
 
 The CDK script itself is written in Python, and if you look at the app.py you will see that we pass in the name “demo”, and we allow you to set your IAM name (to ensure you are a system administrator of the cluster).
 
-You *MUST* change the app.py to update your iam_user, and if you which to give the VPC and cluster a more meaningful name you can change "demo".
+You *MUST* change the iam_user in app.py (for example: iam_user = "kodexa") and if you wish to give the VPC and cluster a more meaningful name you can change "demo".
 
 Then you can run the deploy (make sure you are in this conda environment before running the deploy code):
 
