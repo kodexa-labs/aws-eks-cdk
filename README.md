@@ -23,7 +23,7 @@ Now you have your environment available.
 
 The CDK script itself is written in Python, and if you look at the app.py you will see that we pass in the name “demo”.
 
-You are welcome to change this in the app.py, and then you can run the deploy:
+You are welcome to change this in the app.py, and then you can run the deploy (make sure you are in this conda environment before running the deploy code):
 
 ```bash
 cdk deploy
