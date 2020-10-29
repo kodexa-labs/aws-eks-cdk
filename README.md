@@ -21,9 +21,11 @@ Now you have your environment available.
 
 ## Deploying the EKS cluster
 
-The CDK script itself is written in Python, and if you look at the app.py you will see that we pass in the name “demo”.
+The CDK script itself is written in Python, and if you look at the app.py you will see that we pass in the name “demo”, and we allow you to set your IAM name (to ensure you are a system administrator of the cluster).
 
-You are welcome to change this in the app.py, and then you can run the deploy (make sure you are in this conda environment before running the deploy code):
+You *MUST* change the app.py to update your iam_user, and if you which to give the VPC and cluster a more meaningful name you can change "demo".
+
+Then you can run the deploy (make sure you are in this conda environment before running the deploy code):
 
 ```bash
 cdk deploy

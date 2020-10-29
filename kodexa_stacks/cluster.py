@@ -6,7 +6,7 @@ import aws_cdk.aws_iam as iam
 import aws_cdk.aws_rds as rds
 import yaml
 from aws_cdk import core
-from aws_cdk.core import Stack, SecretValue
+from aws_cdk.core import CfnParameter, Stack, SecretValue
 
 
 def base64_encode_string(value):
@@ -17,7 +17,7 @@ def base64_encode_string(value):
 
 class KodexaStack(Stack):
 
-    def __init__(self, scope, id, *, description=None, env=None, tags=None, synthesizer=None):
+    def __init__(self, scope, id, *, description=None, env=None, tags=None, synthesizer=None, iam_user=None):
         super().__init__(scope, id, description=description, env=env, tags=tags,
                          synthesizer=synthesizer)
 
@@ -49,5 +49,6 @@ class KodexaStack(Stack):
                               default_capacity=4,
                               masters_role=cluster_admin)
 
-        # admin_user = iam.User.from_user_name(id='cluster-admin-iam-user', user_name='philip', scope=self)
-        # cluster.aws_auth.add_user_mapping(admin_user, groups=['system:masters'])
+        if iam_user:
+            admin_user = iam.User.from_user_name(id='cluster-admin-iam-user', user_name=iam_user, scope=self)
+            cluster.aws_auth.add_user_mapping(admin_user, groups=['system:masters'])
