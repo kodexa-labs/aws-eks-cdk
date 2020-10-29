@@ -35,7 +35,7 @@ This process might take some time to create the infrastructure. Note it will fir
 
 All CDK changes will be made through a CloudFormation template.
 
-At the end of the deploy, the command will output an AWS CLI command that will register the cluster with your local kubectl.
+At the end of the deploy, the command will output an AWS CLI command that will register the cluster with your local kubectl. Make sure to run the command that starts with "aws eks update-kubeconfig..." before using Helm to deploy Kodexa.
 
 ```bash
 Outputs:
