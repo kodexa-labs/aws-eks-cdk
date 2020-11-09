@@ -25,6 +25,23 @@ The CDK script itself is written in Python, and if you look at the app.py you wi
 
 You *MUST* change the iam_user in app.py (for example: iam_user = "kodexa") and if you wish to give the VPC and cluster a more meaningful name you can change "demo".
 
+### Additional Settings
+
+Beyond adding your IAM user to provide you access to the cluster you can also edit the app.py to change 
+some other settings.
+
+```python
+# This is the size of the initial node group for the cluster
+default_capacity = 3
+
+# If you want to use an existing VPC you can provide the VPC ID
+# here
+vpc_id=None
+
+# The instance type to use for the node group
+default_instance_type='t3a.large'
+```
+
 Then you can run the deploy (make sure you are in this conda environment before running the deploy code):
 
 ```bash

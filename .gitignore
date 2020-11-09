@@ -2,3 +2,4 @@ cdk.out
 .idea
 .Ulysse*
 __pycache__
+*.pyc

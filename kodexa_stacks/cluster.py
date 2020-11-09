@@ -17,27 +17,32 @@ def base64_encode_string(value):
 
 class KodexaStack(Stack):
 
-    def __init__(self, scope, id, *, description=None, env=None, tags=None, synthesizer=None, iam_user=None):
+    def __init__(self, scope, id, *, description=None, env=None, tags=None, synthesizer=None, iam_user=None, vpc_id=None, default_capacity=4, default_instance_type='t3a.large'):
         super().__init__(scope, id, description=description, env=env, tags=tags,
                          synthesizer=synthesizer)
 
-        vpc = ec2.Vpc(self, f"kodexa-vpc-{id}",
-                      max_azs=2,
-                      cidr="10.10.0.0/16",
-                      subnet_configuration=[ec2.SubnetConfiguration(
-                          subnet_type=ec2.SubnetType.PUBLIC,
-                          name="Public",
-                          cidr_mask=24
-                      ), ec2.SubnetConfiguration(
-                          subnet_type=ec2.SubnetType.PRIVATE,
-                          name="Private",
-                          cidr_mask=24
-                      )],
-                      nat_gateways=1,
-                      )
+        if vpc_id:
+            vpc = ec2.Vpc.from_lookup(self, "VPC",
+                   vpc_id = vpc_id  
+                )
+        else:
+            vpc = ec2.Vpc(self, f"kodexa-vpc-{id}",
+                        max_azs=2,
+                        cidr="10.10.0.0/16",
+                        subnet_configuration=[ec2.SubnetConfiguration(
+                            subnet_type=ec2.SubnetType.PUBLIC,
+                            name="Public",
+                            cidr_mask=24
+                        ), ec2.SubnetConfiguration(
+                            subnet_type=ec2.SubnetType.PRIVATE,
+                            name="Private",
+                            cidr_mask=24
+                        )],
+                        nat_gateways=1,
+                        )
 
-        core.CfnOutput(self, "Output",
-                       value=vpc.vpc_id)
+            core.CfnOutput(self, "Output",
+                        value=vpc.vpc_id)
 
         # Create K8S cluster
 
@@ -46,7 +51,8 @@ class KodexaStack(Stack):
         cluster = eks.Cluster(self, id=f'kodexa-eks-cluster-{id}', cluster_name=f'kodexa-eks-cluster-{id}',
                               version=eks.KubernetesVersion.V1_17,
                               vpc=vpc,
-                              default_capacity=4,
+                              default_capacity_instance=default_instance_type,
+                              default_capacity=default_capacity,
                               masters_role=cluster_admin)
 
         if iam_user:
