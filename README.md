@@ -14,7 +14,6 @@ To use CDK we recommend that you [install Anaconda](https://www.anaconda.com/pro
 conda env create -f environment.yml
 conda activate kodexa_cdk
 pip install -r requirements.txt
-
 ```
 
 Now you have your environment available.
@@ -35,11 +34,15 @@ some other settings.
 default_capacity = 3
 
 # If you want to use an existing VPC you can provide the VPC ID
-# here
-vpc_id=None
+# here (for example vpc-063ee4e387458dd5d).
+# Note that if you are going to provide a VPC ID you will also have
+# to provide the account (your AWS account ID) and the region
+vpc_id = None  # or example 'vpc-063ee4e387458dd5d'
+account = None  # or example '045323014440'
+region = None  # or example  'us-east-1'
 
 # The instance type to use for the node group
-default_instance_type='t3a.large'
+default_instance_type = 't3a.large'
 ```
 
 Then you can run the deploy (make sure you are in this conda environment before running the deploy code):
