@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "states:*",
+        "cloudFormation:*",
+        "s3:*",
+        "elasticloadbalancing:*",
+        "autoscaling:*",
+        "iam:*",
+        "ssm:*",
+        "serverlessrepo:*",
+        "lambda:*",
+        "ecr:*",
+        "ec2:*",
+        "ebs:*",
+        "eks:*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

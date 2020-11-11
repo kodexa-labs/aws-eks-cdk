@@ -68,6 +68,11 @@ arn:aws:cloudformation:us-east-1:045323014350:stack/demo/84305320-1936-11eb-xxxx
 
 ```
 
+## IAM Permissions
+
+If you are not running the CDK script with an AWS administrator role, then it is best to ensure you have the rights
+needed. You can use the policy.json in this repository to provide you with the correct role for the deployment.
+
 ## Destroying the EKS cluster
 
 You can also use the CDK command to destroy the environment that was created.
