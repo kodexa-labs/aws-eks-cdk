@@ -7,7 +7,7 @@ from kodexa_stacks.cluster import KodexaStack
 
 app = core.App()
 
-# Update this line to add your IAM username (ie. amadeapaula) to
+# Update this line to add your IAM username (ie. "kodexa") to
 # the system administrators group for the cluster
 iam_user = None
 
