@@ -11,7 +11,7 @@ First up, install CDK on your machine, see [Getting started with the AWS CDK](ht
 
 AWS_ACCESS_KEY = AKIAI44QH8DHBEXAMPLEKEY  
 AWS_SECRET_ACCESS_KEY = je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLESECRETKEY   
-AWS_REGION = us-EAST-1  
+AWS_REGION = us-east-1  
 
 
 To use CDK we recommend that you [install Anaconda](https://www.anaconda.com/products/individual) \[2\]. You can then create the conda environment and use that to manage the dependencies. Using Github, clone this repository locally.  Then, in Anaconda Prompt, point to the directory of the repository and run the following commands:
@@ -22,13 +22,13 @@ conda activate kodexa_cdk
 pip install -r requirements.txt
 ```
 
-Now you have your environment available.
+Now you have your conda environment available.
 
 ## Deploying the EKS cluster
 
 The CDK script itself is written in Python, and if you look at the app.py you will see that we pass in the name “demo”, and we allow you to set your IAM name (to ensure you are a system administrator of the cluster).
 
-You *MUST* change the iam_user in app.py (for example: iam_user = "kodexa") and if you wish to give the VPC and cluster a more meaningful name you can change "demo".
+**You MUST change the iam_user in app.py (for example: iam_user = "kodexa") and if you wish to give the VPC and cluster a more meaningful name you can change "demo".**
 
 ### Additional Settings
 
