@@ -6,9 +6,14 @@ This project is useful if you are looking to get started with an instance of Kod
 
 ## Getting Started
 
-First up, install CDK on your machine, see [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) \[1\]. Note that during your AWS configure you will be using the access and secret keys we received from creating the user above. Use us-east-1 as the region.
+First up, install CDK on your machine, see [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) \[1\]. Note that during your AWS configure you will be using the access and secret keys we received from creating the user above. **Use us-east-1 as the region.**  For Windows users, be sure to add the entires and values for 
 
-To use CDK we recommend that you [install Anaconda](https://www.anaconda.com/products/individual) \[2\]. You can then create the conda environment and use that to manage the dependencies. Make sure you have cloned this repository and go to that directory and run the following commands:
+AWS:
+AWS_ACCESS_KEY = AKIAI44QH8DHBEXAMPLEKEY
+AWS_SECRET_ACCESS_KEY = je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLESECRETKEY 
+AWS_REGION = us-EAST-1
+
+To use CDK we recommend that you [install Anaconda](https://www.anaconda.com/products/individual) \[2\]. You can then create the conda environment and use that to manage the dependencies. Using Github, clone this repository locally.  Then, in Anaconda Prompt, point to the directory of the repository and run the following commands:
 
 ```bash
 conda env create -f environment.yml
@@ -45,13 +50,13 @@ region = None  # or example  'us-east-1'
 default_instance_type = 't3a.large'
 ```
 
-Then you can run the deploy (make sure you are in this conda environment before running the deploy code):
+Then you can run the deploy command. This is done in Anaconda Prompt - make sure you are in this conda environment/directory before running the deploy code:
 
 ```bash
 cdk deploy
 ```
 
-This process might take some time to create the infrastructure. Note it will first show you the changes that will be made before making them.
+This process willt take some time to create the infrastructure. Note it will first show you the changes that will be made before making them.
 
 All CDK changes will be made through a CloudFormation template.
 
