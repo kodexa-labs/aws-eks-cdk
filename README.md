@@ -6,13 +6,12 @@ This project is useful if you are looking to get started with an instance of Kod
 
 ## Getting Started
 
-First up, install CDK on your machine, see [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) \[1\]. Note that during your AWS configure you will be using the access and secret keys we received from creating the user above. **Use us-east-1 as the region.**  For Windows users, be sure to add the entries and values for 
+First up, install CDK on your machine, see [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) \[1\]. Note that during your AWS configure you will be using the access and secret keys we received from creating the user above. **Use us-east-1 as the region.**  For Windows users, be sure to add the entries and values for
 
 
 AWS_ACCESS_KEY = AKIAI44QH8DHBEXAMPLEKEY  
 AWS_SECRET_ACCESS_KEY = je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLESECRETKEY   
 AWS_REGION = us-east-1  
-
 
 To use CDK we recommend that you [install Anaconda](https://www.anaconda.com/products/individual) \[2\]. You can then create the conda environment and use that to manage the dependencies. Using Github, clone this repository locally.  Then, in Anaconda Prompt, point to the directory of the repository and run the following commands:
 
@@ -32,7 +31,7 @@ The CDK script itself is written in Python, and if you look at the app.py you wi
 
 ### Additional Settings
 
-Beyond adding your IAM user to provide you access to the cluster you can also edit the app.py to change 
+Beyond adding your IAM user to provide you access to the cluster you can also edit the app.py to change
 some other settings.
 
 ```python
