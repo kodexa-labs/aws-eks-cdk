@@ -76,7 +76,7 @@ region = None  # or example  'us-east-1'
 default_instance_type = 't3a.large'
 ```
 ### Time to deploy the cluster ###
-You can now the deploy command. **IMPORTANT: This is done in Anaconda Prompt - make sure you are in Anaconda Prompt and pointing to this repository before running the deploy code**:
+You can now the deploy command. **IMPORTANT: This is done in Anaconda Prompt - make sure you are in Anaconda Prompt and pointing to this repository before running the deploy code.**:
 
 ```bash
 cdk deploy
@@ -109,9 +109,14 @@ needed. You can use the policy.json in this repository to provide you with the c
 
 ## Destroying the EKS cluster
 
-You can also use the CDK command to destroy the environment that was created.**IMPORTANT: This is done in Anaconda Prompt - make sure you are in Anaconda Prompt and pointing to this repository before running the destroy code**
+You can also use the CDK command to destroy the environment that was created.  
+**IMPORTANT: This is done in Anaconda Prompt - make sure you:**
+1. **are in Anaconda Prompt**
+2. **pointing to this repository before running the destroy code**
+3. **note that each time you create a new Anaconda prompt, you need to activate the environment you intend to use. In the case, run the following commands.**
 
 ```bash
+activate kodexa_cdk
 cdk destroy
 ```
 
