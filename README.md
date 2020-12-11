@@ -1,35 +1,62 @@
-# AWS EKS CDK
 
-A CDK deployment to create a VPC and EKS Cluster
+# Purpose of this repository
+This repository will be useful if you are looking to get started with an instance of Kodexa from AWS Marketplace. It will create a VPC with an EKS cluster in place ready for the marketplace helm deployment.
 
-This project is useful if you are looking to get started with an instance of Kodexa from AWS Marketplace. It will create a VPC with an EKS cluster in place ready for the marketplace helm deployment.
+# Assumptions
+1. The reader is familiar with GitHub
+1. The user is an AWS user and has the AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY and knows the AWS region to be used.  We will use AWS_REGION = us-east-1 in this exercise.
+1. The AWS account ID is known. You can get this while in the AWS console.  Click you user name on the upper right and you will see the account ID.
+1. Administrative rights to the PC being used to run this exercise.
 
-## Getting Started
+# What is AWS EKS CDK?
+A AWS CDK (Amazon Web Services Cloud Development Kit) deployment will be used to create a VPC (Virtual Private Cloud) and EKS Cluster (Amazon Elastic Kubernetes Service).  We will then deploy Kodexa to the this managed Kubernetes Cluster.  
 
-First up, install CDK on your machine, see [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) \[1\]. Note that during your AWS configure you will be using the access and secret keys we received from creating the user above. **Use us-east-1 as the region.**  For Windows users, be sure to add the entries and values for
+Amazon Elastic Kubernetes Service (EKS) is a managed Kubernetes service that makes it easy for you to run Kubernetes on AWS and on-premises. Amazon EKS is certified Kubernetes conformant, so existing applications that run on upstream Kubernetes are compatible with Amazon EKS).
 
+It is assumed that the reader is familiar with GitHub.  
+
+## CDK Prerequisites
+
+
+##what is this again?????
+before instaling cdk
+run in cmd prompt:   Is that right)
+helm install kodexa kodexa/kodexa -f values.yaml
+
+
+
+
+
+Several other programs / toolkits will be installed and used. References and links to relevant pages are provided.  
+
+First up, install CDK on your machine, see [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) \[1\].
+
+Note that during your AWS configure you will be using the access and secret keys you received when your AWS was created. **Use us-east-1 as the region.**  
+
+As described in the above link, if you are a Windows user, be sure to add the entries and values to your user path. Alternatively, you could use Windows Credential Manager. Here is an example.
 
 AWS_ACCESS_KEY = AKIAI44QH8DHBEXAMPLEKEY  
 AWS_SECRET_ACCESS_KEY = je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLESECRETKEY   
 AWS_REGION = us-east-1  
 
-To use CDK we recommend that you [install Anaconda](https://www.anaconda.com/products/individual) \[2\]. You can then create the conda environment and use that to manage the dependencies. Using Github, clone this repository locally.  Then, in Anaconda Prompt, point to the directory of the repository and run the following commands:
-
+1. To use CDK please [install Anaconda](https://www.anaconda.com/products/individual) \[2\].
+1. Using Github, clone this repository locally using GitHub and note the directory the repository is in.
+1. We will now create the conda environment and use that to manage the dependencies. **Using Anaconda Prompt**, change to the directory of the repository and run the following commands:
 ```bash
 conda env create -f environment.yml
 conda activate kodexa_cdk
 pip install -r requirements.txt
 ```
 
-Now you have your conda environment available.
+You now have your conda environment available.
 
 ## Deploying the EKS cluster
 
-The CDK script itself is written in Python, and if you look at the app.py you will see that we pass in the name “demo”, and we allow you to set your IAM name (to ensure you are a system administrator of the cluster).
+The CDK script itself is written in Python, and if you look at the app.py you will see that we pass in the name “demo”, and we allow you to set your IAM name (to ensure you are a system administrator of the cluster).  
+### Additional Settings (Optional. It is suggested you keep the default the first time you do this.)
+**You may need to change python3 to python on line 2 of cdk.json to reflect the name of the python executable you installed.**  Look in the directory that python was installed in and look for the executable's name (python, python39, etc.).
 
-**You MUST change the iam_user in app.py (for example: iam_user = "kodexa") and if you wish to give the VPC and cluster a more meaningful name you can change "demo".**
-
-### Additional Settings
+**You may want to change the iam_user in app.py (for example: iam_user = "kodexa") if you wish to give the VPC and cluster a more meaningful name**
 
 Beyond adding your IAM user to provide you access to the cluster you can also edit the app.py to change
 some other settings.
@@ -49,8 +76,8 @@ region = None  # or example  'us-east-1'
 # The instance type to use for the node group
 default_instance_type = 't3a.large'
 ```
-
-Then you can run the deploy command. This is done in Anaconda Prompt - make sure you are in this conda environment/directory before running the deploy code:
+### Time to deploy the cluster ###
+You can now the deploy command. **IMPORTANT: This is done in Anaconda Prompt - make sure you are in Anaconda Prompt and pointing to this repository before running the deploy code**:
 
 ```bash
 cdk deploy
@@ -60,7 +87,10 @@ This process will take some time to create the infrastructure. Note it will firs
 
 All CDK changes will be made through a CloudFormation template.
 
-At the end of the deploy, the command will output an AWS CLI command that will register the cluster with your local kubectl. Make sure to run the command that starts with "aws eks update-kubeconfig..." before using Helm to deploy Kodexa.
+At the end of the deploy, the command will output an AWS CLI command that will register the cluster with your local kubectl.
+
+1. **Be sure to copy this information as some of it is needed in subsequent steps.**  
+1. **Make sure to run the command that starts with "aws eks update-kubeconfig..." before using Helm to deploy Kodexa.**
 
 ```bash
 Outputs:
@@ -80,7 +110,7 @@ needed. You can use the policy.json in this repository to provide you with the c
 
 ## Destroying the EKS cluster
 
-You can also use the CDK command to destroy the environment that was created.
+You can also use the CDK command to destroy the environment that was created.**IMPORTANT: This is done in Anaconda Prompt - make sure you are in Anaconda Prompt and pointing to this repository before running the destroy code**
 
 ```bash
 cdk destroy
