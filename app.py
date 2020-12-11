@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from aws_cdk import core
-from aws_cdk.core import Environment
+from aws-cdk import core
+from asw_cdk.core import Environment
 
 from kodexa_stacks.cluster import KodexaStack
 

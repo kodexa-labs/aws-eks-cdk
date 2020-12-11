@@ -56,7 +56,7 @@ Then you can run the deploy command. This is done in Anaconda Prompt - make sure
 cdk deploy
 ```
 
-This process willt take some time to create the infrastructure. Note it will first show you the changes that will be made before making them.
+This process will take some time to create the infrastructure. Note it will first show you the changes that will be made before making them.
 
 All CDK changes will be made through a CloudFormation template.
 

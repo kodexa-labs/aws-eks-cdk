@@ -1,4 +1,4 @@
-aws-cdk.core
+aws_cdk.core
 aws_cdk.aws_cloudformation
 aws_cdk.aws_rds
 aws_cdk.aws_eks
