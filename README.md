@@ -1,6 +1,16 @@
 
 # Purpose of this repository
-This repository will be useful if you are looking to get started with an instance of Kodexa from AWS Marketplace. It will create a VPC with an EKS cluster in place ready for the marketplace helm deployment.
+This repository will be useful if you are looking to get started with an instance of Kodexa from AWS Marketplace. It will create a VPC with an EKS cluster in place ready for the marketplace helm deployment.  
+
+Note: At the end of this document are two important items:
+1. How to destroy the EKS cluster that you created (to stop spending $$)
+1. The link you need to follow to deploy Kodexa to the EKS Cluster you will be creating.
+
+In essence, the process is:
+- install your Prerequisites for a AWS EKS deploy.
+- deploy an AWS EKS clusters
+- install Prerequisites for a Kodexa deploy
+- deploy Kodexa into the AWS cluster
 
 # Assumptions
 1. The reader is familiar with GitHub
@@ -16,17 +26,6 @@ Amazon Elastic Kubernetes Service (EKS) is a managed Kubernetes service that mak
 It is assumed that the reader is familiar with GitHub.  
 
 ## CDK Prerequisites
-
-
-##what is this again?????
-before instaling cdk
-run in cmd prompt:   Is that right)
-helm install kodexa kodexa/kodexa -f values.yaml
-
-
-
-
-
 Several other programs / toolkits will be installed and used. References and links to relevant pages are provided.  
 
 First up, install CDK on your machine, see [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) \[1\].
@@ -123,3 +122,8 @@ If you need help with any of these steps for working with EKS clusters for Kodex
 \[2\]:	https://www.anaconda.com/products/individual
 
 \[3\]:	https://slack.kodexa.com
+
+## Go on to deploy Kodexa into the cluster you have just created.
+Go to https://developer.kodexa.com/learning-kodexa/deployment-options/#install-kubectl
+
+Find  "Deployment Options" -> Install Kubectrl and proceed from there
