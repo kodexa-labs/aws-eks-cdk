@@ -41,6 +41,7 @@ AWS_REGION = us-east-1
 1. To use CDK please [install Anaconda](https://www.anaconda.com/products/individual) \[2\].
 1. Using Github, clone this repository locally using GitHub and note the directory the repository is in.
 1. We will now create the conda environment and use that to manage the dependencies. **Using Anaconda Prompt**, change to the directory of the repository and run the following commands:
+
 ```bash
 conda env create -f environment.yml
 conda activate kodexa_cdk
@@ -49,16 +50,15 @@ pip install -r requirements.txt
 
 You now have your conda environment available.
 
-## Deploying the EKS cluster
+## Before the deploy commands, edit the app.py file
 
 The CDK script itself is written in Python, and if you look at the app.py you will see that we pass in the name “demo”, and we allow you to set your IAM name (to ensure you are a system administrator of the cluster).  
-### Additional Settings (Optional. It is suggested you keep the default the first time you do this.)
-**You may need to change python3 to python on line 2 of cdk.json to reflect the name of the python executable you installed.**  Look in the directory that python was installed in and look for the executable's name (python, python39, etc.).
 
-**You may want to change the iam_user in app.py (for example: iam_user = "kodexa") if you wish to give the VPC and cluster a more meaningful name**
+**IMPORTANT: You may need to change python3 to python on line 2 of cdk.json to reflect the name of the python executable you installed.**  Look in the directory that python was installed in and look for the executable's name (python, python39, etc.).
 
-Beyond adding your IAM user to provide you access to the cluster you can also edit the app.py to change
-some other settings.
+**IMPORTANT: You MUST change the iam_user in app.py line 12. (for example: iam_user = "kodexa") to ensure you are a system administrator of the cluster**
+
+Beyond adding your IAM user to provide you access to the cluster you can also edit the app.py to change some other settings.
 
 ```python
 # This is the size of the initial node group for the cluster
