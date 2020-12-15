@@ -87,14 +87,8 @@ cdk deploy
 ```
 
 This process will take some time to create the infrastructure. Note it will first show you the changes that will be made before making them.
-
 All CDK changes will be made through a CloudFormation template.
-
-At the end of the deploy, the command will output an AWS CLI command that will register the cluster with your local kubectl.
-
-1. **Be sure to copy this information as some of it is needed in subsequent steps.**  
-1. **Make sure to run the command that starts with "aws eks update-kubeconfig..." before using Helm to deploy Kodexa.**
-
+At the end of the deploy, the command will **output** an AWS CLI command that will register the cluster with your local kubectl.
 ```bash
 Outputs:
 demo.Output = vpc-066b33daxxxxxxxx
@@ -104,6 +98,15 @@ demo.kodexaeksclusterdemoGetTokenCommand26EC227C = aws eks get-token --cluster-n
 Stack ARN:
 arn:aws:cloudformation:us-east-1:045323014350:stack/demo/84305320-1936-11eb-xxxx-xxxxxxxxx
 
+```
+**Be sure to copy this information as some of it is needed in subsequent steps.**  
+### Immediately after the deploy command finishes:
+
+**Inside the Outputs, find the entire command that starts with "aws eks update-kubeconfig..." before using Helm to deploy Kodexa.**   
+You can run this command from your open Anaconda Prompt. You will find the command after the = sign on the line that starts with "primary.kodexaeksclusterprimaryConfigCommand".  It will be a long string.
+After this runs, you can verify it ran correctly by issuing the following command"
+```bash
+kubectl cluster-info
 ```
 
 ## IAM Permissions
