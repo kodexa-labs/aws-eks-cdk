@@ -77,8 +77,8 @@ default_instance_type = 't3a.large'
 ```
 ### Time to deploy the cluster ###
 You can now the deploy command.   
-**IMPORTANT: This is done in Anaconda Prompt - make sure you are in Anaconda Prompt and pointing to this repository before running the deploy code.**:
-**if you had closed Anaconda Prompt before this step, be sure to activate the environment using the first line below and then deploy the cluster:**
+**IMPORTANT: This is done in Anaconda Prompt - make sure you are in Anaconda Prompt and pointing to this repository before running the deploy code.**  
+**If you had closed Anaconda Prompt before this step, be sure to activate the environment using the first line below and then deploy the cluster:**
 
 ```bash
 activate kodexa_cdk
