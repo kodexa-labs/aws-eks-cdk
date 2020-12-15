@@ -54,11 +54,11 @@ You now have your conda environment available.
 
 The CDK script itself is written in Python, and if you look at the app.py you will see that we pass in the name “demo”, and we allow you to set your IAM name (to ensure you are a system administrator of the cluster).  
 
-**IMPORTANT: You may need to change python3 to python on line 2 of cdk.json to reflect the name of the python executable you installed.**  Look in the directory that python was installed in and look for the executable's name (python, python39, etc.).
-
 **IMPORTANT: You MUST change the iam_user in app.py line 12. (for example: iam_user = "kodexa") to ensure you are a system administrator of the cluster**
 
-Beyond adding your IAM user to provide you access to the cluster you can also edit the app.py to change some other settings.
+**IMPORTANT: You may need to change python3 to python on line 2 of cdk.json to reflect the name of the python executable you installed.**  Look in the directory that python was installed in and look for the executable's name (python, python39, etc.).
+
+**Optional Advanced Options: Beyond adding your IAM user to provide you access to the cluster you can also edit the app.py to change some other settings.**
 
 ```python
 # This is the size of the initial node group for the cluster
