@@ -86,7 +86,7 @@ activate kodexa_cdk
 cdk deploy
 ```
 
-This process will take some time to create the infrastructure. Note it will first show you the changes that will be made before making them.
+This process will take some time,around 1/2 hour, to create the infrastructure. Note that the process will first show you the changes that will be made before making them. **You will see a Y/N prompt fairly quickly in the process showing the proposed changes. Press Y to continue.**
 All CDK changes will be made through a CloudFormation template.
 At the end of the deploy, the command will **output** an AWS CLI command that will register the cluster with your local kubectl.
 ```bash
