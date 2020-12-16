@@ -127,6 +127,8 @@ activate kodexa_cdk
 cdk destroy
 ```
 
+**Note that you will be asked if you wish to delete the primary. Type Y. This process will take a while to complete as did the 'cdk deploy'**
+
 If you need help with any of these steps for working with EKS clusters for Kodexa come join us in [Kodexa Slack](https://slack.kodexa.com) \[3\]
 
 \[1\]:	https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html
