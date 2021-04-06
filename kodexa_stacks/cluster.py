@@ -115,6 +115,7 @@ class KodexaStack(Stack):
             delete_automated_backups=True,
             backup_retention=core.Duration.days(7))
 
+        helm_values['dharma']['platform']['environment'] = id
         helm_values['dharma']['platform']['assets']['bucketName'] = s3_assets_bucket.bucket_name
         helm_values['dharma']['platform']['cacheBucket'] = s3_cache_bucket.bucket_name
         helm_values['dharma']['platform']['storeBucket'] = s3_storage_bucket.bucket_name

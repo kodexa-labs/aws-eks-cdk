@@ -12,7 +12,7 @@ app = core.App()
 iam_user = "philip"
 
 # This is the size of the initial node group for the cluster
-default_capacity = 3
+default_capacity = 2
 
 # If you want to use an existing VPC you can provide the VPC ID
 # here (for example vpc-063ee4e387458dd5d).
