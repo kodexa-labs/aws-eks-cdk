@@ -9,7 +9,7 @@ app = core.App()
 
 # You must update this line to add your IAM username (ie. "kodexa") to
 # the system administrators group for the cluster
-iam_user = "david"
+iam_user = "philip"
 
 # This is the size of the initial node group for the cluster
 default_capacity = 3
@@ -22,13 +22,17 @@ vpc_id = None  # or example 'vpc-063ee4e387458dd5d'
 account = None  # or example '045323014440'
 region = None  # or example  'us-east-1'
 
+# The hostname you wish to use on the internet (this will enable ELBs)
+host_name = "demo.kodexa.ai"
+
 # The instance type to use for the node group
 default_instance_type = 't3a.large'
 
-vpc_stack = KodexaStack(app, "primary",
+vpc_stack = KodexaStack(app, "demo",
                         iam_user=iam_user,
                         default_capacity=default_capacity,
                         vpc_id=vpc_id,
                         default_instance_type=default_instance_type,
-                        env=Environment(account=account, region=region))
+                        env=Environment(account=account, region=region),
+                        host_name=host_name)
 app.synth()

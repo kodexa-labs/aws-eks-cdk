@@ -1,0 +1,56 @@
+
+dharma:
+  platform:
+    registry:
+      type: ecr
+      url: 123.dkr.ecr.us-east-1.amazonaws.com
+    cache:
+      s3endpoint: "https://s3.amazonaws.com"
+      s3accessKey: "aws"
+      s3secretAccessKey: "aws"
+    store:
+      s3endpoint: "https://s3.amazonaws.com"
+      s3accessKey: "aws"
+      s3secretAccessKey: "aws"
+    assets:
+      s3endpoint: "https://s3.amazonaws.com"
+      s3accessKey: "aws"
+      s3secretAccessKey: "aws"
+    datasource:
+      url: "jdbc:postgresql://kodexa-postgresql:5432/kodexadb"
+      username: "kodexa"
+      password: "kodexa!db"
+zen:
+  ingress:
+    enabled: false
+    annotations:
+      kubernetes.io/ingress.class: alb
+      alb.ingress.kubernetes.io/target-type: instance
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443},{"HTTP":80}]'
+    hosts:
+      - host: example.kodexa.com
+        paths:
+          - "/*"
+
+aws-load-balancer-controller:
+  clusterName: kodexa
+
+kafka:
+  fullnameOverride: kodexa-kafka
+
+kodexa:
+  dharma:
+    enabled: true
+  openfaas:
+    enabled: false
+  postgres:
+    enabled: false
+  minio:
+    enabled: false
+  elastic:
+    enabled: true
+  kafka:
+    enabled: true
+  alb-ingress:
+    enabled: false
