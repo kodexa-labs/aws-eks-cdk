@@ -18,7 +18,7 @@ In essence, the process is:
 # Assumptions
 
 1. The reader is familiar with GitHub
-1. The user is has AWS user account is administrative permissions
+1. The user has an AWS user account with administrative permissions
 
 # What is AWS EKS CDK?
 
