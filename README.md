@@ -30,8 +30,13 @@ Go to your AWS Console and from there search for Cloud Shell, and then launch an
 
 Once you have a Cloud Shell instance available you can simply run the following command to clone this repository to your shell.
 
-git clone 
+```bash
+git clone https://github.com/kodexa-ai/aws-eks-cdk.git
+cd aws-eks-cdk
+./aws-shell-go.sh
+```
 
+This will download and setup all the tools you'll need to build a new VPC, EKS cluster, S3 buckets for storage and caching and also an RDS instance to use as a database.
 
 ## Before the deploy commands, edit the app.py file
 
