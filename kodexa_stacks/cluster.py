@@ -49,16 +49,10 @@ class KodexaStack(Stack):
             core.CfnOutput(self, "vpcId",
                            value=vpc.vpc_id)
 
-        # We need to create the namespace for kodexa and then
-        # we will run the helm chart - overwriting YAML configuration with the RDS configuration
-        # that we have in place
-
-        # Create K8S cluster
-
         cluster_admin = iam.Role(self, f"kdxa-adminrole-{id}", assumed_by=iam.AccountRootPrincipal())
 
         eks_role = iam.Role(self, f"kdxa-eksrole-{id}",
-                            role_name='eksRole',
+                            role_name=f"kdxa-eksrole-{id}",
                             assumed_by=iam.ServicePrincipal('eks.amazonaws.com')
                             )
 
@@ -107,7 +101,7 @@ class KodexaStack(Stack):
             security_groups=[cluster.cluster_security_group],
             credentials=rds.Credentials.from_password("kodexadb", SecretValue("kodexa!db")),
             multi_az=False,
-            publicly_accessible=False,
+            publicly_accessible=True,
             allocated_storage=100,
             storage_type=rds.StorageType.GP2,
             cloudwatch_logs_exports=[],

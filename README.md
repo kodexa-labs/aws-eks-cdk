@@ -16,7 +16,6 @@ In essence, the process is:
 1. The reader is familiar with GitHub
 1. The user is an AWS user and has the AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY and knows the AWS region to be used.  We will use AWS_REGION = us-east-1 in this exercise.
 1. The AWS account ID is known. You can get this while in the AWS console.  Click you user name on the upper right and you will see the account ID.
-1. Administrative rights to the PC being used to run this exercise.
 
 # What is AWS EKS CDK?
 A AWS CDK (Amazon Web Services Cloud Development Kit) deployment will be used to create a VPC (Virtual Private Cloud) and EKS Cluster (Amazon Elastic Kubernetes Service).  We will then deploy Kodexa to the this managed Kubernetes Cluster.  
@@ -25,30 +24,14 @@ Amazon Elastic Kubernetes Service (EKS) is a managed Kubernetes service that mak
 
 It is assumed that the reader is familiar with GitHub.  
 
-## CDK Prerequisites
-Several other programs / toolkits will be installed and used. References and links to relevant pages are provided.  
+## AWS Cloud Shell
 
-First up, install CDK on your machine, see [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) \[1\].
+Go to your AWS Console and from there search for Cloud Shell, and then launch an instance.
 
-Note that during your AWS configure you will be using the access and secret keys you received when your AWS was created. **Use us-east-1 as the region.**  
+Once you have a Cloud Shell instance available you can simply run the following command to clone this repository to your shell.
 
-As described in the above link, if you are a Windows user, be sure to add the entries and values to your user path. Alternatively, you could use Windows Credential Manager. Here is an example.
+git clone 
 
-AWS_ACCESS_KEY = AKIAI44QH8DHBEXAMPLEKEY  
-AWS_SECRET_ACCESS_KEY = je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLESECRETKEY   
-AWS_REGION = us-east-1  
-
-1. To use CDK please [install Anaconda](https://www.anaconda.com/products/individual) \[2\].
-1. Using Github, clone this repository locally using GitHub and note the directory the repository is in.
-1. We will now create the conda environment and use that to manage the dependencies. **Using Anaconda Prompt**, change to the directory of the repository and run the following commands:
-
-```bash
-conda env create -f environment.yml
-conda activate kodexa_cdk
-pip install -r requirements.txt
-```
-
-You now have your conda environment available.
 
 ## Before the deploy commands, edit the app.py file
 
@@ -78,13 +61,9 @@ default_instance_type = 't3a.large'
 ### Time to deploy the cluster ###
 You can now the deploy command.   
 
-**IMPORTANT: This is done in Anaconda Prompt - make sure you are in Anaconda Prompt and pointing to this repository before running the deploy code.  
-if you had closed Anaconda Prompt before this step, be sure to activate the environment using the first line below, then deploy the cluster:**
-
-```bash
-activate kodexa_cdk
+``bash
 cdk deploy
-```
+``
 
 This process will take some time,around 1/2 hour, to create the infrastructure. Note that the process will first show you the changes that will be made before making them. **You will see a Y/N prompt fairly quickly in the process showing the proposed changes. Press Y to continue.**
 All CDK changes will be made through a CloudFormation template.
