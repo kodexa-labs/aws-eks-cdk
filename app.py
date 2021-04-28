@@ -23,12 +23,12 @@ account = None  # or example '045323014440'
 region = None  # or example  'us-east-1'
 
 # The hostname you wish to use on the internet (this will enable ELBs)
-host_name = "demo.kodexa.ai"
+host_name = "preview.kodexa.ai"
 
 # The instance type to use for the node group
 default_instance_type = 't3a.large'
 
-vpc_stack = KodexaStack(app, "demo",
+vpc_stack = KodexaStack(app, "preview",
                         iam_user=iam_user,
                         default_capacity=default_capacity,
                         vpc_id=vpc_id,
