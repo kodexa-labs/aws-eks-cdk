@@ -79,7 +79,8 @@ If you have any questions please contact support@kodexa.com
 
 You can now the deploy command:
 
-``bash cdk deploy
+``bash 
+cdk deploy
 ``
 
 This process will take some time,around 1/2 hour, to create the infrastructure. Note that the process will first show
