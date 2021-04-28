@@ -79,19 +79,14 @@ If you have any questions please contact support@kodexa.com
 
 You can now the deploy command:
 
-```bash 
-cdk deploy
-```
-If you see the message  
-     (NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)  
-     Do you wish to deploy these changes (y/n)?   
-please respond with Y  
-
-
 This process will take some time,around 1/2 hour, to create the infrastructure. As stated directly above, the process will first show
 you the changes that will be made before making them. **You will see a Y/N prompt fairly quickly in the process showing
 the proposed changes. Press Y to continue.**
 All CDK changes will be made through a CloudFormation template.
+
+```bash 
+cdk deploy
+```
 
 *If at any time your AWS Cloud Shell disconnects, return to the AWS Console and goto Cloud Formation to monitor your
 stack's deployment*
