@@ -82,10 +82,10 @@ You can now the deploy command:
 ```bash 
 cdk deploy
 ```
-If you see the message
-     (NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
-     Do you wish to deploy these changes (y/n)? 
-please respond with Y
+If you see the message  
+     (NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)  
+     Do you wish to deploy these changes (y/n)?   
+please respond with Y  
 
 
 This process will take some time,around 1/2 hour, to create the infrastructure. Note that the process will first show
