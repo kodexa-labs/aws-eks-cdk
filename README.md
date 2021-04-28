@@ -47,7 +47,7 @@ This will download and setup all the tools you'll need to build a new VPC, EKS c
 caching and also an RDS instance to use as a database.
 
 ## Before the deploy commands, edit the app.py file  
-Hint - open another duplicate tab so that you can see these instructions at teh saem time a you edit the app.py file.
+Hint - open another duplicate tab so that you can see these instructions at the saem time a you edit the app.py file.
 
 The CDK script itself is written in Python, and if you look at the app.py you will see that we pass in the name “demo”,
 and we allow you to set your IAM name (to ensure you are a system administrator of the cluster).
