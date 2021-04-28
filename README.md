@@ -46,7 +46,8 @@ cd aws-eks-cdk
 This will download and setup all the tools you'll need to build a new VPC, EKS cluster, S3 buckets for storage and
 caching and also an RDS instance to use as a database.
 
-## Before the deploy commands, edit the app.py file
+## Before the deploy commands, edit the app.py file  
+Hint - open another duplicate tab so that you can see these instructions at teh saem time a you edit the app.py file.
 
 The CDK script itself is written in Python, and if you look at the app.py you will see that we pass in the name “demo”,
 and we allow you to set your IAM name (to ensure you are a system administrator of the cluster).
@@ -113,13 +114,6 @@ you gave this Kodexa instance, choose it and then choose outputs.
 
 **Inside the Outputs, find the entire command that starts with "aws eks update-kubeconfig...".**
 
-You can run this command from your open Anaconda Prompt. You will find the command after the = sign on the line that
-starts with "primary.kodexaeksclusterprimaryConfigCommand". It will be a long string. After this runs, you can verify it
-ran correctly by issuing the following command"
-
-```bash
-kubectl cluster-info
-```
 
 ## Destroying the EKS cluster
 
