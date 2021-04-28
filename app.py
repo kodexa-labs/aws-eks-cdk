@@ -23,7 +23,7 @@ account = None  # or example '045323014440'
 region = None  # or example  'us-east-1'
 
 # The hostname you wish to use on the internet (this will enable ELBs)
-host_name = "preview.kodexa.ai"
+host_name = None
 
 # The instance type to use for the node group
 default_instance_type = 't3a.large'
