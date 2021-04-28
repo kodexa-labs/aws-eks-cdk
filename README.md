@@ -88,7 +88,7 @@ If you see the message
 please respond with Y  
 
 
-This process will take some time,around 1/2 hour, to create the infrastructure. Note that the process will first show
+This process will take some time,around 1/2 hour, to create the infrastructure. As stated directly above, the process will first show
 you the changes that will be made before making them. **You will see a Y/N prompt fairly quickly in the process showing
 the proposed changes. Press Y to continue.**
 All CDK changes will be made through a CloudFormation template.
