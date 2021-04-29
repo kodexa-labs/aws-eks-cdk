@@ -1,19 +1,18 @@
 # Purpose of this repository
 
-This repository will be useful if you are looking to get started with an instance of Kodexa from AWS Marketplace. It
-will create a VPC with an EKS cluster in place ready for the marketplace helm deployment.
+This repository will be useful if you are looking to get started with an instance of Kodexa from the Amazon Web Services (AWS) Marketplace. It will create a Virtual Private Cloud (VPC) with an Elastic Kubernetes Service (EKS) cluster in place ready for the marketplace helm deployment.
 
-Note: At the end of this document are two important items:
+At the end of this document are two important items:
 
-1. How to destroy the EKS cluster that you created (to stop spending $$)
-1. The link you need to follow to deploy Kodexa to the EKS Cluster you will be creating.
+- How to destroy the EKS cluster that you created (to stop spending $$), and
+- The link you need to follow to deploy Kodexa to the EKS Cluster you will be creating.
 
 In essence, the process is:
 
-- install your Prerequisites for a AWS EKS deploy.
-- deploy an AWS EKS clusters
-- install Prerequisites for a Kodexa deploy
-- deploy Kodexa into the AWS cluster
+1. Install your Prerequisites for a AWS EKS deploy.
+1. Deploy an AWS EKS clusters
+1. Install Prerequisites for a Kodexa deploy
+1. Deploy Kodexa into the AWS cluster
 
 # Assumptions
 
@@ -22,17 +21,17 @@ In essence, the process is:
 
 # What is AWS EKS CDK?
 
-A AWS CDK (Amazon Web Services Cloud Development Kit) deployment will be used to create the following for our
+An AWS CDK (Amazon Web Services Cloud Development Kit) deployment will be used to create the following for our
 installation:
 
-* VPC (Virtual Private Cloud)
-* EKS Cluster (Amazon Elastic Kubernetes Service).
-* 3 x S3 buckets (for storing assets, objects and caching)
-* RDS Postgres database for metadata and data storage in Kodexa
+* VPC: Virtual Private Cloud
+* EKS Cluster: Amazon Elastic Kubernetes Service
+* 3 x S3 buckets: for storing assets, objects, and caching)
+* RDS Postgres: database for metadata and data storage in Kodexa
 
 ## AWS Cloud Shell
 
-Go to your AWS Console and from there search for Cloud Shell, and then launch an instance.
+Go to your AWS Console and from there search for "Cloud Shell." Then launch an instance.
 
 Once you have a Cloud Shell instance available you can simply run the following command to clone this repository to your
 shell.
@@ -43,11 +42,10 @@ cd aws-eks-cdk
 ./aws-shell-go.sh
 ```
 
-This will download and setup all the tools you'll need to build a new VPC, EKS cluster, S3 buckets for storage and
-caching and also an RDS instance to use as a database.
+This will download and setup all the tools you'll need to build a new VPC, EKS cluster, S3 buckets, and also an RDS instance to use as a database.
 
 ## Before the deploy commands, edit the app.py file  
-Hint - open another duplicate tab so that you can see these instructions at the saem time a you edit the app.py file.
+Hint: Open another duplicate tab so that you can see these instructions at the same time you edit the app.py file.
 
 The CDK script itself is written in Python, and if you look at the app.py you will see that we pass in the name “demo”,
 and we allow you to set your IAM name (to ensure you are a system administrator of the cluster).
@@ -74,7 +72,7 @@ region = None  # or example  'us-east-1'
 default_instance_type = 't3a.large'
 ```
 
-If you have any questions please contact support@kodexa.com
+If you have any questions, please contact support@kodexa.com
 
 ### Time to deploy the cluster ###
 
@@ -126,7 +124,7 @@ cdk destroy
 **Note that you will be asked if you wish to delete the primary. Type Y. This process will take a while to complete as
 did the 'cdk deploy'**
 
-If you need help with any of these steps for working with EKS clusters for Kodexa come join us
+If you need help with any of these steps for working with EKS clusters for Kodexa, come join us
 in [Kodexa Slack](https://slack.kodexa.com) \[3\]
 
 \[1\]:    https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html
