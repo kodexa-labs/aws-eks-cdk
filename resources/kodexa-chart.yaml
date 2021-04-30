@@ -38,7 +38,8 @@ aws-load-balancer-controller:
 
 kafka:
   fullnameOverride: kodexa-kafka
-
+  zookeeper:
+    fullnameOverride: kodexa-zookeeper
 kodexa:
   dharma:
     enabled: true
