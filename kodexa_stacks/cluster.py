@@ -140,5 +140,5 @@ class KodexaStack(Stack):
         core.CfnOutput(self, "helm-values",
                        value=yaml.dump(helm_values))
 
-        cluster.add_helm_chart(id="kdxa", repository="https://charts.kodexa.com/internal", chart="kodexa",
+        cluster.add_helm_chart(id="kdxa", repository="https://charts.kodexa.com", chart="kodexa",
                                create_namespace=True, namespace="kodexa", values=helm_values)
