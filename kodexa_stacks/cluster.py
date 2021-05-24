@@ -68,7 +68,9 @@ class KodexaStack(Stack):
                               masters_role=cluster_admin)
 
         if iam_user:
-            admin_user = iam.User.from_user_name(id='cluster-admin-iam-user', user_name=iam_user, scope=self)
+            for user in iam_user:
+                admin_user = iam.User.from_user_name(id='cluster-admin-' + user, user_name=user, scope=self)
+                cluster.aws_auth.add_user_mapping(admin_user, groups=['system:masters'])
 
         cluster.aws_auth.add_user_mapping(admin_user, groups=['system:masters'])
 
