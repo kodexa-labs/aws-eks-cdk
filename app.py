@@ -26,7 +26,7 @@ region = None  # or example  'us-east-1'
 host_name = None
 
 # The instance type to use for the node group
-default_instance_type = 't3a.large'
+default_instance_type = 'm5.xlarge'
 
 vpc_stack = KodexaStack(app, "preview",
                         iam_user=iam_user,
