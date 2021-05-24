@@ -9,7 +9,7 @@ app = core.App()
 
 # You must update this line to add your IAM username (ie. "kodexa") to
 # the system administrators group for the cluster
-iam_user = "david"
+iam_user = ["david"]
 
 # This is the size of the initial node group for the cluster
 default_capacity = 2
