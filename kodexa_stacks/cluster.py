@@ -143,4 +143,4 @@ class KodexaStack(Stack):
                        value=yaml.dump(helm_values))
 
         cluster.add_helm_chart(id="kdxa", repository="https://charts.kodexa.com", chart="kodexa",
-                               create_namespace=True, namespace="kodexa", values=helm_values, version="3.3.676")
+                               create_namespace=True, namespace="kodexa", values=helm_values, version="3.3.678")
